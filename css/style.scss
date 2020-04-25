@@ -1,1 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+$light_purple : #F3E9F1;
+$medium_purple : #66385D;
+$dark_purple : #261624;
+
+@mixin font_title {
+    font-family: "Merienda", sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: $dark_purple;
+    text-align: center;
+}
+
+@mixin sub_title {
+    font-family: "Roboto", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #000; 
+}
+
+@mixin text {
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000;
+}
+
+@mixin icons {
+    font-size: 55px;
+    color: $medium_purple;   
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+h1{
+    @include font_title();
+}
+
+h2{
+    @include sub_title();
+    width: 70%;
+}
+
+p, li, a{
+    @include text();
+}
+
+i{
+    @include icons();
+}
+
+
+header{
+    background-color: $light_purple;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 140px;
+    z-index: 10;
+    div{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+    i{
+        font-size: 70px;
+    }
+    ul{
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 124px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        line-height: 150px;
+        box-sizing: border-box;
+        padding: 0;
+        border-top: 5px solid $medium_purple;
+        box-sizing: border-box;
+        z-index: 9;
+    }
+    li{
+        list-style: none;
+        box-sizing: border-box;
+        padding-left: 20px;
+        border-bottom: 5px solid $medium_purple;
+        &:hover{
+            background-color: $light_purple;
+        }
+    }
+} 
+
+main{
+    margin-top: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > p{
+        width: 70%;
+    }
+    .menu_icons{
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 10;
+        background-color: $light_purple;
+        width: 100%;
+        a{
+            display: block;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+        }
+
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    ul{
+        display: none;
+    }
+    .social{
+        p{
+            display: none;
+        }
+    }
+}
