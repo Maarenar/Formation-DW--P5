@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script type="text/javascript" src="../js/appearance_controls.js"></script>
     </head>
     <body>
         <header>
-            <img src="#" class="logo"/>
-            <nav>
-                <i class="far fa-bars"></i>
-                <ul>
-                    <li><a href="#">Ours en peluche</a></li>
-                    <li><a href="#"></a>Appareils photos vintages</a></li>
-                    <li><a href="#">Meubles en chêne</a></li>
-                </ul>
-            </nav>
+            <div>
+                <a href="index.html"><img src="../img/logo_modified.png" class="logo"/></a>
+                <nav>
+                    <i class="far fa-bars" onclick="openMenu()"></i>
+                    <ul id="menu_nav">
+                        <li><a href="#">Ours en peluche</a></li>
+                        <li><a href="#">Appareils photos vintages</a></li>
+                        <li><a href="#">Meubles en chêne</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main>
-            <div>
+            <div class="sub_title">
                 <i class="fas fa-shopping-cart"></i>
                 <h2>Mon panier</h2>
             </div>
-            <div id="separation"></div>
+            <div class="separation"></div>
             <button>Passer commande</button>
             <div>
                 <!--DYNAMIQUE-->
@@ -36,22 +40,22 @@
                     <i class="fas fa-heart" aria-hidden="true"></i>
                     <p>Favoris</p>
                 </a>
-                <a href="#">
+                <a href="panier.html">
                     <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                     <p>Mon panier</p>
                 </a>
             </section>
         </main>
         <footer>
-            <p>À propos<i class="fal fa-chevron-down" aria-hidden="true"></i></p>
-            <ul>
+            <p onclick="showFooterAPropos()">À propos<i class="fal fa-chevron-down" aria-hidden="true"></i></p>
+            <ul id="a_propos">
                 <li><a href="#">Qui sommes nous?</a></li>
                 <li><a href="#">Nos engagements</a></li>
                 <li><a href="#">Carte cadeau</a></li>
                 <li><a href="#">Catalogue</a></li>
             </ul>
-            <p>Orinoco&vous<i class="fal fa-chevron-down" aria-hidden="true"></i></p>
-            <ul>
+            <p onclick="showFooterOrinoco()">Orinoco&vous<i class="fal fa-chevron-down" aria-hidden="true"></i></p>
+            <ul id="orinoco_info">
                 <li><a href="#">Livraisons et retours</a></li>
                 <li><a href="#">Services et garanties</a></li>
                 <li><a href="#">Nous contacter</a></li>
@@ -59,19 +63,19 @@
             </ul>
             <img class="logo_bottom" src="#" alt="">
             <section class="social"></div>
-                    <a href="#">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                        <p>Facebook</p>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                        <p>Twitter</p>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <p>Instagram</p>
-                    </a>
-                </section>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <p>Facebook</p>
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <p>Twitter</p>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <p>Instagram</p>
+                </a>
+            </section>
         </footer>
     </body>
 
