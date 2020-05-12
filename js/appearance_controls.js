@@ -11,33 +11,10 @@
      }
  }
 
- /**
- * Open footer information A propos
- */
-
-function showFooterAPropos(){
-    var a = document.getElementById("a_propos");
-    var o = document.getElementById("orinoco_info");
-    if(a.style.display === "block"){
-       a.style.display = "none";
-    }else{
-        a.style.display = "block";
-        o.style.display = "none";
-    }
-}
-
 /**
- * Open footer information Orinoco&vous
- */
+* Creation of the list of cameras on home page
+*/
 
-function showFooterOrinoco(){
-    var a = document.getElementById("a_propos");
-    var o = document.getElementById("orinoco_info");
-    if(o.style.display === "block"){
-       o.style.display = "none";
-    }else{
-        o.style.display = "block";
-        a.style.display = "none";
-    }
-}
-
+productCard = document.createElement('div');
+let listeVue = document.getElementById('liste');
+listeVue.appendChild(productCard);

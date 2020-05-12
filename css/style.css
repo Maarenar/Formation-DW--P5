@@ -10,7 +10,7 @@ body {
 
 h1 {
   font-family: "Merienda", sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   color: #261624;
   text-align: center;
@@ -18,20 +18,20 @@ h1 {
 
 h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
   color: #000;
 }
 
 p, li, a {
   font-family: "Roboto", sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 400;
   color: #000;
 }
 
 i {
-  font-size: 62px;
+  font-size: 30px;
   color: #66385D;
 }
 
@@ -53,9 +53,6 @@ header div {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-}
-header i {
-  font-size: 70px;
 }
 header ul {
   background-color: #F3E9F1;
@@ -96,29 +93,6 @@ main .sub_title {
   align-items: center;
   width: 100%;
 }
-main .sub_title i {
-  margin-right: 20px;
-}
-main .menu_icons {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 10;
-  background-color: #F3E9F1;
-  width: 100%;
-}
-main .menu_icons a {
-  display: block;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  padding-top: 50px;
-}
 
 footer {
   width: 100%;
@@ -129,21 +103,21 @@ footer {
   position: relative;
   background-color: rgba(0, 0, 0, 0.1);
 }
+footer .footer_infos {
+  display: flex;
+  flex-direction: column;
+}
 footer p {
   display: inline-block;
   text-align: left;
-}
-footer p, footer section {
-  width: 31%;
+  margin: 0;
 }
 footer ul {
-  display: none;
   list-style: none;
-  position: absolute;
+  margin: 0;
 }
-footer .fa-chevron-down {
-  font-size: 40px;
-  margin-left: 15px;
+footer section {
+  width: 31%;
 }
 footer .social {
   display: flex;
@@ -152,18 +126,6 @@ footer .social {
 }
 footer .social p {
   display: none;
-}
-
-#a_propos {
-  top: 85px;
-  left: -10px;
-  line-height: 90px;
-}
-
-#orinoco_info {
-  top: 85px;
-  left: 320px;
-  line-height: 90px;
 }
 
 .separation {
@@ -195,6 +157,12 @@ button {
 .large_button i {
   color: #fff;
   font-size: 48px;
+}
+
+.transparent_button {
+  color: #66385D;
+  border: 1px solid #66385D;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
