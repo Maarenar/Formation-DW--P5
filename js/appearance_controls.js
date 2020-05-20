@@ -11,10 +11,13 @@
      }
  }
 
-/**
-* Creation of the list of cameras on home page
+ /**
+  * Add underline on active menu item
 */
 
-productCard = document.createElement('div');
-let listeVue = document.getElementById('liste');
-listeVue.appendChild(productCard);
+ let activeItem = document.querySelector("#menu_nav > li:nth-child(2)");
+ activeItem.classList.add("active_item");
+
+
+
+

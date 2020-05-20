@@ -1,0 +1,50 @@
+/**
+* Add title on homepage
+*/
+
+let homeTitle = "<h2>Appareils photo</h2>";
+document.getElementById("title").innerHTML = homeTitle;
+
+/**
+* Cameras db
+*/
+class Appareil {
+    constructor(id,name,price,description,imageURL){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.imageURL = imageURL;
+    }
+}
+
+const appareilUn = new Appareil(1,"Name1",340,"blabla1","./img/vcam_1.jpg");
+const appareilDeux = new Appareil(2,"Name2",600,"blabla2","./img/vcam_2.jpg");
+const appareilTrois = new Appareil(3,"Name3",520,"blabla3","./img/vcam_3.jpg");
+const appareilQuatre = new Appareil(4,"Name4",780,"blabla4","./img/vcam_4.jpg");
+const AppareilCinq = new Appareil(5,"Name5",250,"blabla5","./img/vcam_5.jpg");
+
+let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCinq];
+
+/**
+ * Add product cards on homepage
+ */
+
+for (let i in appareils){
+    productCard = document.createElement('section');
+    let listeVue = document.getElementById('liste');
+    listeVue.appendChild(productCard);
+    productCard.innerHTML = "<div><h3>Nom</h3><img src='img/vcam_1.jpg'/></div><div><p class='product_price'>Prix</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>";
+}
+
+/*let productCardList = document.querySelectorAll("#liste section");
+for (i=0; i < productCardList.length; i++){
+    productCardList.classList.add('product_card');
+}*/
+
+/*for (let i in appareils){
+    productCard = document.createElement('section');
+    let listeVue = document.getElementById('liste');
+    listeVue.appendChild(productCard);
+    productCard.innerHTML = "<div><h3>Appareil.name</h3><img src=Appareil.imageURL/></img></div><div><p class='product_price'>Appareil.price</p><p>Appareil.description</p></div>";
+}*/

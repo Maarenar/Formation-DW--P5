@@ -4,25 +4,27 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/appearance_controls.js"></script>
     </head>
     <body>
         <?php
             include('includes/header.php');
         ?>
-        
         <main>
-            <h1>Bienvenue sur Orinoco</h1>
-            <section id="title">
-            </section>
+            <div class="sub_title">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Mon panier</h2>
+            </div>
             <div class="separation"></div>
-            <section id="liste">
-            </section>
+            <button>Passer commande</button>
+            <div>
+                <!--DYNAMIQUE-->
+            </div>
+            <button>Passer commande</button>
         </main>
         <?php
             include('includes/footer.php');
         ?>
-        <script type="text/javascript" src="js/liste_vue.js"></script>
-        <script type="text/javascript" src="js/appearance_controls.js"></script>
     </body>
 
 </html>
