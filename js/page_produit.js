@@ -27,4 +27,4 @@ let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCi
 productDetails = document.createElement('section');
 let productInfo = document.getElementById('produit');
 productInfo.appendChild(productDetails);
-productDetails.innerHTML = "<div><h3>Nom</h3><img src='img/vcam_1.jpg'/></div><div><p class='product_price'>Prix</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>";
+productDetails.innerHTML = "<div><h3></h3><img/></div><div><p class='product_price'></p><p></p></div>";
