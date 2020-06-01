@@ -1,6 +1,6 @@
 /**
 * Cameras db
-*/
+
 class Appareil {
     constructor(id,name,price,description,imageURL){
         this.id = id;
@@ -18,13 +18,37 @@ const appareilQuatre = new Appareil(4,"Name4",780,"blabla4","./img/vcam_4.jpg");
 const AppareilCinq = new Appareil(5,"Name5",250,"blabla5","./img/vcam_5.jpg");
 
 let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCinq];
+*/
+
+/**
+ * Retrieve data from localStorage
+ */
+
+let objetProduit = JSON.parse(window.localStorage.getItem("info"));
+
+/**
+ * Adding the title as the name stored in localStorage
+let pageProduct = document.getElementsByTagName('main');
+let productTitle = document.createElement('h2');
+    productTitle.innerText = `${objetProduit.name}`;
+pageProduct.prepend(productTitle);
+*/
 
 
 /**
- * Add product info on product page
+ * Adding the rest of the info stored in localStorage
  */
 
-productDetails = document.createElement('section');
-let productInfo = document.getElementById('produit');
-productInfo.appendChild(productDetails);
-productDetails.innerHTML = "<div><h3></h3><img/></div><div><p class='product_price'></p><p></p></div>";
+let productDetails = document.getElementById('product_info');
+let productImage = document.createElement('img');
+    productImage.src = `${objetProduit.imageURL}`;
+let productPrice = document.createElement('p');
+    productPrice.innerText = `${objetProduit.price}`;
+let productDescription = document.createElement('p');
+    productDescription.innerText = `${objetProduit.description}`;
+
+productDetails.append(productImage, productPrice, productDescription);
+
+
+
+

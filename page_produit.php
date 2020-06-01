@@ -11,9 +11,8 @@
             include('includes/header.php');
         ?>
         <main>
-            <h2>Appareil 1</h2>
             <div class="separation"></div>
-            <section id="produit">
+            <section id="product_info">
             </section>
             <button><i class="far fa-plus"></i>Ajouter au panier</button>
         </main>

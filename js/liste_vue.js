@@ -2,7 +2,7 @@
 * Add title on homepage
 */
 
-let homeTitle = "<h2>Appareils photo</h2>";
+let homeTitle = "<h2>Appareils photo vintage</h2>";
 document.getElementById("title").innerHTML = homeTitle;
 
 /**
@@ -31,24 +31,25 @@ const listeVue = document.getElementById('liste');
 
 for(let i in appareils) {
     let productCard = document.createElement('section');
-    productCard.classList.add('product_card');
-    productCard.onclick = function(){
-        window.open("page_produit.php");
-    }
+        productCard.classList.add('product_card');
+        productCard.onclick = function storeData(){
+            window.localStorage.clear();
+            window.localStorage.setItem('info', JSON.stringify(appareils[i]));
+            window.open("page_produit.php");
+        };
     let productLeftDiv = document.createElement('div');
     let productName = document.createElement('h3');
-    productName.innerText = `${appareils[i].name}`;
+        productName.innerText = `${appareils[i].name}`;
     let productImage = document.createElement('img');
-    productImage.src = `${appareils[i].imageURL}`;
+        productImage.src = `${appareils[i].imageURL}`;
     let productRightDiv = document.createElement('div');
     let productPrice = document.createElement('p');
-    productPrice.classList.add('product_price');
-    productPrice.innerText = `${appareils[i].price}` + ` €`;
+        productPrice.classList.add('product_price');
+        productPrice.innerText = `${appareils[i].price}` + ` €`;
     let productDescription = document.createElement('p');
-    productDescription.innerText = `${appareils[i].description}`;
+        productDescription.innerText = `${appareils[i].description}`;
     listeVue.append(productCard);
     productCard.append(productLeftDiv,productRightDiv);
     productLeftDiv.append(productName,productImage);
     productRightDiv.append(productPrice,productDescription);
 }
-
