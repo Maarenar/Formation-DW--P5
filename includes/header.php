@@ -8,5 +8,10 @@
                 <li><a href="#">Meubles en chêne</a></li>
             </ul>
         </nav>
+        <section>
+            <a href="panier.php"><p>Mon panier</p><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            <i class="fal fa-horizontal-rule"></i>
+            <i class="fas fa-user"></i>
+        </section>
     </div>
 </header>

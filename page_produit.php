@@ -11,10 +11,11 @@
             include('includes/header.php');
         ?>
         <main>
+            <div id="page_title"></div>
             <div class="separation"></div>
             <section id="product_info">
             </section>
-            <button><i class="far fa-plus"></i>Ajouter au panier</button>
+            <button onclick="addToBasket()"><i class="far fa-plus"></i>Ajouter au panier</button>
         </main>
         <?php
             include('includes/footer.php');

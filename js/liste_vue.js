@@ -6,7 +6,7 @@ let homeTitle = "<h2>Appareils photo vintage</h2>";
 document.getElementById("title").innerHTML = homeTitle;
 
 /**
-* Cameras db
+* Cameras DB
 */
 class Appareil {
     constructor(id,name,price,description,imageURL){
@@ -25,6 +25,9 @@ const appareilQuatre = new Appareil(4,"Minolta XG 7 appareil",780,"Il s'agit d'u
 const AppareilCinq = new Appareil(5,"Olympus OM-10 SLr 35MM",250,"Reflex 35mm vintage, Lens est un Olympus OM-System Zuiko Auto-S 1:1,8 50mm.Lentille supplémentaire - J.C. Penny 55-135mm Optique multi-enduite 1:2.8f -135mm, Filtre UV - Super Albinar 49MM, Doté d’une exposition automatique (AE) se base sur le compteur de lumière directe TTL.","./img/vcam_5.jpg");
 
 let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCinq];
+/**
+ * End of cameras DB
+ */
 
 
 const listeVue = document.getElementById('liste');
@@ -33,23 +36,28 @@ for(let i in appareils) {
     let productCard = document.createElement('section');
         productCard.classList.add('product_card');
         productCard.onclick = function storeData(){
-            window.localStorage.clear();
-            window.localStorage.setItem('info', JSON.stringify(appareils[i]));
+            window.localStorage.setItem('productDetails', JSON.stringify(appareils[i]));
             window.open("page_produit.php");
         };
+
     let productLeftDiv = document.createElement('div');
     let productName = document.createElement('h3');
         productName.innerText = `${appareils[i].name}`;
+
     let productImage = document.createElement('img');
         productImage.src = `${appareils[i].imageURL}`;
+
     let productRightDiv = document.createElement('div');
     let productPrice = document.createElement('p');
         productPrice.classList.add('product_price');
         productPrice.innerText = `${appareils[i].price}` + ` €`;
+
     let productDescription = document.createElement('p');
         productDescription.innerText = `${appareils[i].description}`;
+
     listeVue.append(productCard);
     productCard.append(productLeftDiv,productRightDiv);
     productLeftDiv.append(productName,productImage);
     productRightDiv.append(productPrice,productDescription);
-}
+};
+
