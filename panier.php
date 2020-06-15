@@ -15,11 +15,16 @@
                 <h2>Mon panier</h2>
             </div>
             <div class="separation"></div>
-            <button onclick="showCloseForm()">Passer commande</button>
-            <div id="product_info">
+            <div id="panier_content">
+                <div id="table_cart">
+                </div>
+                <div id="panier_summary">
+                    <button onclick="showCloseForm()">Passer commande</button>
+                    <p>TOTAL</p>
+                    <p>20473€</p>
+                    <button onclick="showCloseForm()">Passer commande</button>
+                </div>
             </div>
-            <button onclick="showCloseForm()">Passer commande</button>
-
             <section class="formulaire" id="form_order">
                 <div>
                     <h4>Merci de remplir le formulaire pour passer commande (tous les champs sont obligatoires)</h4>

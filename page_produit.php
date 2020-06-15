@@ -24,7 +24,7 @@
                         <option value="75mm">75mm</option>
                     </select>
                 </form>
-                <button onclick="addToBasket()"><i class="far fa-plus"></i>Ajouter au panier</button>
+                <button onclick="addToCart()"><i class="far fa-plus"></i>Ajouter au panier</button>
             </section>
         </main>
         <?php

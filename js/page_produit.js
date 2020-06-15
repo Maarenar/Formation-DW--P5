@@ -38,7 +38,7 @@ productDetails.append(productImage, productPrice, productDescription);
 *Add product to basket
  **/
 
-function addToBasket() {
+function addToCart() {
     // Check if we already have an array in local storage.
     let productsTable = localStorage.getItem("productList");
     // If not, create the array.
@@ -51,7 +51,6 @@ function addToBasket() {
     }else{
         productsTable.increase(id, 1);
     };
-    
     // Encode the array.
     productsTable = JSON.stringify(productsTable);
     // Add back to LocalStorage. 
