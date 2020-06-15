@@ -50,7 +50,7 @@ for(let i in appareils) {
     let productRightDiv = document.createElement('div');
     let productPrice = document.createElement('p');
         productPrice.classList.add('product_price');
-        productPrice.innerText = `${appareils[i].price}` + ` €`;
+        productPrice.innerText = `${appareils[i].price}` + `€`;
 
     let productDescription = document.createElement('p');
         productDescription.innerText = `${appareils[i].description}`;

@@ -13,9 +13,19 @@
         <main>
             <div id="page_title"></div>
             <div class="separation"></div>
-            <section id="product_info">
+            <section class="conteneur">
+                <section id="product_info">
+                </section>
+                <form class="product_perso">
+                    <label for="lentille">Choisissez votre lentille : </label>
+                    <select name="lentille" id="lentille">
+                        <option value="55mm">55mm</option>
+                        <option value="65mm">65mm</option>
+                        <option value="75mm">75mm</option>
+                    </select>
+                </form>
+                <button onclick="addToBasket()"><i class="far fa-plus"></i>Ajouter au panier</button>
             </section>
-            <button onclick="addToBasket()"><i class="far fa-plus"></i>Ajouter au panier</button>
         </main>
         <?php
             include('includes/footer.php');

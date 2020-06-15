@@ -18,13 +18,17 @@ pageProduct.appendChild(productTitle);
  */
 
 let productDetails = document.getElementById('product_info');
+
 let productImage = document.createElement('img');
+    productImage.className = "product_image";
     productImage.src = `${objetProduit.imageURL}`;
+
 let productPrice = document.createElement('p');
-    productPrice.id = "product_price";
-    productPrice.innerText = `${objetProduit.price}`;
+    productPrice.className = "product_price";
+    productPrice.innerText = `${objetProduit.price}` + `€`;
+
 let productDescription = document.createElement('p');
-    productDescription.id = "description_produit";
+    productDescription.className = "description_produit";
     productDescription.innerText = `${objetProduit.description}`;
 
 productDetails.append(productImage, productPrice, productDescription);
@@ -36,22 +40,26 @@ productDetails.append(productImage, productPrice, productDescription);
 
 function addToBasket() {
     // Check if we already have an array in local storage.
-    let x = localStorage.getItem("productList");
+    let productsTable = localStorage.getItem("productList");
     // If not, create the array.
-    if (x === null) x = [];
+    if (productsTable === null) productsTable = [];
     // If so, decode the array. 
-    else x = JSON.parse(x);
-    // Add our new item. 
-
-    x.push(objetProduit);
+    else productsTable = JSON.parse(productsTable);
+    // Check if item is in the array.
+    if(productsTable.find(product => product.id !== objetProduit.id)){
+        productsTable.push(objetProduit);
+    }else{
+        productsTable.increase(id, 1);
+    };
     
     // Encode the array.
-    x = JSON.stringify(x);
+    productsTable = JSON.stringify(productsTable);
     // Add back to LocalStorage. 
-    localStorage.setItem("productList", x);
+    localStorage.setItem("productList", productsTable);
 
     window.open("panier.php");
 };
+
 
 
 
