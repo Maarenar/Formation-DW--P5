@@ -302,6 +302,56 @@ main {
 .conteneur #product_info .product_image {
   max-width: 250px;
 }
+.conteneur .product_perso label, .conteneur .product_perso select {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+}
+
+.hide {
+  display: none;
+}
+
+.popup_show {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.4);
+  width: 40%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.popup_show div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.popup_show div:first-child p {
+  font-size: 20px;
+}
+.popup_show div:first-child i {
+  font-size: 21px;
+  color: green;
+  margin-right: 10px;
+}
+.popup_show div:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.popup_show div:last-child button {
+  margin-right: 10px;
+}
+.popup_show div:last-child button:hover a {
+  color: #000;
+}
+.popup_show div:last-child a {
+  color: #fff;
+}
 
 button {
   display: flex;
@@ -330,6 +380,10 @@ button:hover {
   cursor: pointer;
 }
 
+.show {
+  display: block;
+}
+
 #panier_content {
   display: flex;
   flex-direction: row;
@@ -354,6 +408,12 @@ button:hover {
     padding: 10px;
     box-sizing: border-box;
   }
+}
+#panier_content #table_cart > p {
+  font-size: 30px;
+  font-weight: 700;
+  color: red;
+  background-color: #fff;
 }
 #panier_content #table_cart .product_summary {
   width: 100%;
@@ -493,13 +553,30 @@ button:hover {
   color: #fff;
 }
 
+#confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#confirmation i {
+  font-size: 50px;
+  color: #66385d;
+}
+#confirmation #id_order {
+  font-weight: 700;
+  color: #66385d;
+}
+#confirmation #total_amount {
+  font-weight: 700;
+  color: #66385d;
+}
+
 footer {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: relative;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
   box-sizing: border-box;

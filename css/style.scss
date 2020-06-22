@@ -298,6 +298,57 @@ main{
             max-width: 250px;
         }
     }
+    .product_perso{
+        label, select{
+            @include text();
+        }
+    }
+}
+
+.hide{
+    display: none;  
+}
+
+.popup_show{
+    display: block;
+    z-index: 10;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.4);
+    width: 40%;
+    box-sizing: border-box;
+    padding: 15px;
+    div{
+        &:first-child{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            p{
+                font-size: 20px;
+            }
+            i{
+                font-size: 21px;
+                color: green;
+                margin-right: 10px;
+            }
+        }
+        &:last-child{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            button{
+                margin-right: 10px;
+                &:hover a{
+                    color: #000;
+                }
+            }
+            a{
+                color: #fff;
+            }
+        }
+    }
 }
 
 button{
@@ -327,6 +378,9 @@ button{
     }
 }
 
+.show{
+    display: block;
+}
 #panier_content{
     display: flex;
     flex-direction: row;
@@ -345,6 +399,12 @@ button{
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
+        }
+        >p{
+            font-size: 30px;
+            font-weight: 700;
+            color: red;
+            background-color: #fff;
         }
         .product_summary{
             width: 100%;
@@ -482,6 +542,23 @@ button{
     
 }
 
+#confirmation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        font-size: 50px;
+        color: $medium_purple;
+    }
+    #id_order{
+        font-weight: 700;
+        color: $medium_purple;
+    }
+    #total_amount{
+        font-weight: 700;
+        color: $medium_purple;
+    }
+}
 
 
 footer{
@@ -490,7 +567,6 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    position: relative; 
     background-color: rgba(0,0,0,0.1);
     padding: 10px;
     box-sizing: border-box; 
@@ -504,7 +580,7 @@ footer{
         margin: 0;
     }
     ul{
-        list-style: none;
+        list-style: none; 
         margin: 0;
     }
     section{

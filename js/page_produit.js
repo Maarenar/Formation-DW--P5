@@ -35,29 +35,55 @@ productDetails.append(productImage, productPrice, productDescription);
 
 
 /** 
-*Add product to basket
+ * Add product to basket
  **/
 
 function addToCart() {
-    // Check if we already have an array in local storage.
     let productsTable = localStorage.getItem("productList");
-    // If not, create the array.
-    if (productsTable === null) productsTable = [];
-    // If so, decode the array. 
-    else productsTable = JSON.parse(productsTable);
-    // Check if item is in the array.
-    if(productsTable.find(product => product.id !== objetProduit.id)){
+
+    // Check if productsTable exists in local storage
+    if (!productsTable) {
+
+        // If not, initialize the array and add the current object
+        productsTable = [];
+        objetProduit.quantity++;
         productsTable.push(objetProduit);
-    }else{
-        productsTable.increase(id, 1);
-    };
+    } else {
+
+        // If yes, decode the array. 
+        productsTable = JSON.parse(productsTable);
+
+        // check if the object is already in the array
+        if (productsTable.find(product => product.id === objetProduit.id)) {
+
+            //if yes ==> just increase the value of the key quantity by 1
+            objetProduit.quantity++;
+            for (var i = 0; i < productsTable.length; i++) {
+                if (objetProduit.id === productsTable[i].id) { //look for match with id
+                    productsTable[i].quantity++; //add
+                    break; //exit loop
+                }
+            }
+        } else {
+            //if not ==> add the object into the array
+            objetProduit.quantity++;
+            productsTable.push(objetProduit);
+
+        }
+    }
     // Encode the array.
     productsTable = JSON.stringify(productsTable);
-    // Add back to LocalStorage. 
+
+    // Add the array back to LocalStorage. 
     localStorage.setItem("productList", productsTable);
 
-    window.open("panier.php");
-};
+    let popupAdded = document.getElementById("popup_add");
+    if(popupAdded.className === "hide"){
+        popupAdded.classList.replace("hide","popup_show");
+    }else{
+        popupAdded.classList.replace("popup_show","hide");
+    }
+}
 
 
 

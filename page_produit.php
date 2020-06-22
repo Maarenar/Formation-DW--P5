@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <?php
@@ -25,6 +25,16 @@
                     </select>
                 </form>
                 <button onclick="addToCart()"><i class="far fa-plus"></i>Ajouter au panier</button>
+                <div id="popup_add" class="hide">
+                        <div>
+                            <i class="fas fa-check"></i>
+                            <p>Ajouté au panier!</p>
+                        </div>
+                        <div>
+                            <button><a href="index.php">Continuer mes achats</a></button>
+                            <button><a href="panier.php">Voir mon panier</a></button>
+                        </div>
+                </div>
             </section>
         </main>
         <?php

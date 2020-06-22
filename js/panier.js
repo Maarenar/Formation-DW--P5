@@ -1,12 +1,4 @@
 /**
- * Show form popup
- */
-
-function showCloseForm(){
-    document.getElementById("form_order").classList.toggle('form_show');  
-}
-
-/**
  * Retrieve data from localStorage
  */
 
@@ -29,7 +21,7 @@ for(let i in panier){
         productImage.src = `${panier[i].imageURL}`;
 
     let productPrice = document.createElement('p');
-        productPrice.innerText = `${panier[i].price}` + ` €`;
+        productPrice.innerText = `${panier[i].price}` * `${panier[i].quantity}` + ` €`;
 
     //create quantity cursor
     let productQuantity = document.createElement('div');
@@ -37,12 +29,12 @@ for(let i in panier){
         
     let quantityMinus = document.createElement('div');
         quantityMinus.innerText = `-`;
-
+        
     let quantityPlus = document.createElement('div');
         quantityPlus.innerText = `+`;
 
     let quantityShow = document.createElement('div');
-        quantityShow.innerHTML = `1`;
+        quantityShow.innerHTML = `${panier[i].quantity}`;
 
     productDetails.append(productInfo);
     productInfo.append(leftColumn, rightColumn);
@@ -50,3 +42,31 @@ for(let i in panier){
     rightColumn.append(productQuantity, productPrice);
     productQuantity.append(quantityMinus, quantityShow, quantityPlus);
 };
+
+ /**
+ * Show empty cart button
+ */
+
+if(panier){
+     document.getElementById("empty_basket").classList.replace("hide", "show");
+}
+
+ function emptyCart(){
+    localStorage.clear();
+ }
+
+ /**
+ * Show form popup
+ */
+//ajouter une condition : si panier vide, affiche "votre panier est vide"
+function showCloseForm(){
+    if (panier){
+    document.getElementById("form_order").classList.toggle('form_show');  
+    }else{
+        let emptyCart = document.getElementById("table_cart");
+        let emptyMessage = document.createElement('p');
+        emptyMessage.innerText = "Aucun produit dans le panier";
+        emptyCart.append(emptyMessage);
+    }
+};
+  

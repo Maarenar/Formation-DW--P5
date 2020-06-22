@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <?php
@@ -21,10 +22,11 @@
                 <div id="panier_summary">
                     <button onclick="showCloseForm()">Passer commande</button>
                     <p>TOTAL</p>
-                    <p>20473€</p>
+                    <p id="total_price"></p>
                     <button onclick="showCloseForm()">Passer commande</button>
                 </div>
             </div>
+            <button id="empty_basket" class="hide" onclick="emptyCart()">Vider le panier</button>
             <section class="formulaire" id="form_order">
                 <div>
                     <h4>Merci de remplir le formulaire pour passer commande (tous les champs sont obligatoires)</h4>
@@ -43,7 +45,7 @@
                         <label for="firstname"></label><input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required/>
                         <label for="email"></label><input type="email" name="email" id="email" placeholder="Votre e-mail" required/>
                         <label for="adresse1"></label><input type="text" name="adresse1" id="adresse1" placeholder="Adresse ligne 1" required/>
-                        <label for="adresse2"></label><input type="text" name="adresse2" id="adresse2" placeholder="Adresse ligne 2" required/>
+                        <label for="adresse2"></label><input type="text" name="adresse2" id="adresse2" placeholder="Adresse ligne 2"/>
                         <label for="codepostal"></label><input type="text" name="codepostal" id="codepostal" placeholder="Code postal" required/>
                         <label for="ville"></label><input type="text" name="ville" id="ville" placeholder="Ville" required/>
                         <input type="submit" value="Valider" onclick="sendData()"/>
