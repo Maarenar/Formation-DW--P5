@@ -31,22 +31,21 @@ let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCi
 
 /**
  * Get the cameras data
- 
+
 
  // Create a request variable and assign a new XMLHttpRequest object to it.
 let request = new XMLHttpRequest();
 let appareils = [];
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', '​http://localhost:3000/api/cameras')
-
 request.onload = function() {
     appareils = JSON.parse(this.response)
 }
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', '​http://localhost:3000/api/cameras')
 
 // Send request
-request.send()*/
-
+request.send()
+*/
 
 /**
  * End of cameras DB
