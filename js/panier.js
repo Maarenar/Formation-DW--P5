@@ -1,3 +1,5 @@
+
+
 /**
  * Retrieve data from localStorage
  */
@@ -32,6 +34,52 @@ for(let i in panier){
         
     let quantityPlus = document.createElement('div');
         quantityPlus.innerText = `+`;
+        quantityPlus.onclick = function addToCart(){
+                let productsTable = localStorage.getItem("productList");
+
+                // Check if productsTable exists in local storage
+                if (!productsTable) {
+
+                    // If not, initialize the array and add the current object
+                    productsTable = [];
+                    objetProduit.quantity++;
+                    productsTable.push(objetProduit);
+                } else {
+
+                    // If yes, decode the array. 
+                    productsTable = JSON.parse(productsTable);
+
+                    // check if the object is already in the array
+                    if (productsTable.find(product => product.id === objetProduit.id)) {
+
+                        //if yes ==> just increase the value of the key quantity by 1
+                        objetProduit.quantity++;
+                        for (var i = 0; i < productsTable.length; i++) {
+                            if (objetProduit.id === productsTable[i].id) { //look for match with id
+                                productsTable[i].quantity++; //add
+                                break; //exit loop
+                            }
+                        }
+                    } else {
+                        //if not ==> add the object into the array
+                        objetProduit.quantity++;
+                        productsTable.push(objetProduit);
+
+                    }
+                }
+                // Encode the array.
+                productsTable = JSON.stringify(productsTable);
+
+                // Add the array back to LocalStorage. 
+                localStorage.setItem("productList", productsTable);
+
+                let popupAdded = document.getElementById("popup_add");
+                if(popupAdded.className === "hide"){
+                    popupAdded.classList.replace("hide","popup_show");
+                }else{
+                    popupAdded.classList.replace("popup_show","hide");
+                }
+            };
 
     let quantityShow = document.createElement('div');
         quantityShow.innerHTML = `${panier[i].quantity}`;
@@ -41,7 +89,7 @@ for(let i in panier){
     leftColumn.append(productTitle, productImage);
     rightColumn.append(productQuantity, productPrice);
     productQuantity.append(quantityMinus, quantityShow, quantityPlus);
-};
+}
 
  /**
  * Show empty cart button
@@ -69,4 +117,9 @@ function showCloseForm(){
         emptyCart.append(emptyMessage);
     }
 };
+
+
+
+
+ 
   

@@ -59,5 +59,4 @@
         <script type="text/javascript" src="js/panier.js"></script>
         <script type="text/javascript" src="js/appearance_controls.js"></script>
     </body>
-
 </html>
