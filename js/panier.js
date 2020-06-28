@@ -1,5 +1,3 @@
-
-
 /**
  * Retrieve data from localStorage
  */

@@ -29,12 +29,13 @@ document.getElementById("title").innerHTML = homeTitle;
 * Cameras DB
 */
 class Appareil {
-    constructor(id,name,price,description,imageURL){
+    constructor(id,name,price,description,imageURL,quantity){
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         this.imageURL = imageURL;
+        this.quantity = 0;
     }
 }
 
