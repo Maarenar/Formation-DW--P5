@@ -46,7 +46,7 @@ const appareilQuatre = new Appareil(4,"Minolta XG 7 appareil",780,"Il s'agit d'u
 const AppareilCinq = new Appareil(5,"Olympus OM-10 SLr 35MM",250,"Reflex 35mm vintage, Lens est un Olympus OM-System Zuiko Auto-S 1:1,8 50mm.Lentille supplémentaire - J.C. Penny 55-135mm Optique multi-enduite 1:2.8f -135mm, Filtre UV - Super Albinar 49MM, Doté d’une exposition automatique (AE) se base sur le compteur de lumière directe TTL.","./img/vcam_5.jpg");
 
 let appareils = [appareilUn,appareilDeux,appareilTrois,appareilQuatre,AppareilCinq];
-/**
+/** 
  * End of cameras DB
  */
 

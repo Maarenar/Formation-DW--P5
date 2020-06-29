@@ -426,10 +426,13 @@ button:hover {
 #panier_content #table_cart .product_summary > div {
   width: 50%;
 }
-#panier_content #table_cart .product_summary > div:last-child {
+#panier_content #table_cart .product_summary > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#panier_content #table_cart .product_summary i {
+  cursor: pointer;
 }
 #panier_content #table_cart .product_summary img {
   max-width: 300px;

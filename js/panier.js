@@ -29,19 +29,86 @@ for(let i in panier){
         
     let quantityMinus = document.createElement('div');
         quantityMinus.innerText = `-`;
+        //Add a function to decrease the quantity of the item
+        quantityMinus.onclick = function decreaseProductQuantity(){
+                let productsTable = localStorage.getItem("productList");
+                //Decode the array. 
+                productsTable = JSON.parse(productsTable);
+
+                if(panier[i].quantity<=0){
+                    //remove the item
+                    productsTable.splice(panier[i],1);
+                }else{
+                //decrease the quantity
+                productsTable[i].quantity--;
+                console.log(productsTable[i].quantity);
+                }
+
+                // Encode the array.
+
+                productsTable = JSON.stringify(productsTable);
+            
+                // Add the array back to LocalStorage. 
+                localStorage.setItem("productList", productsTable);
+                };
         
     let quantityPlus = document.createElement('div');
         quantityPlus.innerText = `+`;
+        //Add a function to increase the quantity of the item
+        quantityPlus.onclick = function increaseProductQuantity(){
+            let productsTable = localStorage.getItem("productList");
+            //Decode the array. 
+            productsTable = JSON.parse(productsTable);
+            
+            //increase the quantity
+            productsTable[i].quantity++;
+            console.log(productsTable[i].quantity);
+        
+            // Encode the array.
+            productsTable = JSON.stringify(productsTable);
+        
+            // Add the array back to LocalStorage. 
+            localStorage.setItem("productList", productsTable);
+            };
         
     let quantityShow = document.createElement('div');
         quantityShow.innerHTML = `${panier[i].quantity}`;
 
+    let productDelete = document.createElement('i');
+            productDelete.className = 'fas fa-trash-alt';
+            productDelete.onclick = function removeItem(){
+                let productsTable = localStorage.getItem("productList");
+                //Decode the array. 
+                productsTable = JSON.parse(productsTable);
+                //remove item
+                productsTable.splice(panier[i],1);
+                 // Encode the array.
+                productsTable = JSON.stringify(productsTable);
+        
+                // Add the array back to LocalStorage. 
+                localStorage.setItem("productList", productsTable);
+            }
+
     productDetails.append(productInfo);
-    productInfo.append(leftColumn, rightColumn);
+    productInfo.append(leftColumn, rightColumn, productDelete);
     leftColumn.append(productTitle, productImage);
     rightColumn.append(productQuantity, productPrice);
     productQuantity.append(quantityMinus, quantityShow, quantityPlus);
 }
+
+/**
+ * Calculate total cart price
+ */
+
+ let totalPrice = document.getElementById('total_price');
+ for(let i = 0; i<panier.length; i++){
+    let totalAmount = `${panier[i].price}` * `${panier[i].quantity}` ;
+    totalPrice.innerText = `${totalAmount}` + ` €`;
+ }
+
+ 
+
+
 
  /**
  * Show empty cart button
@@ -70,6 +137,17 @@ function showCloseForm(){
     }
 };
 
+/**
+ * Send cart details + form info
+ */
+
+ function sendData(){
+     if (panier){
+         //send data
+     }else{
+         return "error";
+     }
+ }
 
 
 
