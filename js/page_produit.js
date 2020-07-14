@@ -10,6 +10,7 @@ let objetProduit = JSON.parse(window.localStorage.getItem("productDetails"));
 let pageProduct = document.getElementById('page_title');
 let productTitle = document.createElement('h2');
     productTitle.innerText = `${objetProduit.name}`;
+
 pageProduct.appendChild(productTitle);
 
 
