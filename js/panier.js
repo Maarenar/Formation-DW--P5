@@ -2,8 +2,17 @@
  * Retrieve data from localStorage
  */
 
+
+
 let panier = JSON.parse(window.localStorage.getItem("productList"));
+console.log(panier);
 const productDetails = document.getElementById('table_cart');
+
+//creer une fonction load avec une condition pour remplacer un meme produit
+
+function loadCartContent{
+    
+}
 
 for(let i in panier){
     //create a product container
@@ -30,27 +39,25 @@ for(let i in panier){
     let quantityMinus = document.createElement('div');
         quantityMinus.innerText = `-`;
         //Add a function to decrease the quantity of the item
-        quantityMinus.onclick = function decreaseProductQuantity(){
-                let productsTable = localStorage.getItem("productList");
-                //Decode the array. 
-                productsTable = JSON.parse(productsTable);
+        quantityMinus.onclick = function (){
+            let productsTable = localStorage.getItem("productList");
+            //Decode the array. 
+            productsTable = JSON.parse(productsTable);
 
-                if(panier[i].quantity<=0){
-                    //remove the item
-                    productsTable.splice(panier[i],1);
-                }else{
-                //decrease the quantity
-                productsTable[i].quantity--;
-                console.log(productsTable[i].quantity);
-                }
-
-                // Encode the array.
-
-                productsTable = JSON.stringify(productsTable);
-            
-                // Add the array back to LocalStorage. 
-                localStorage.setItem("productList", productsTable);
-                };
+            if(!productsTable[i]){
+                return false;
+            }
+            productsTable[i].quantity--;
+            if(productsTable[i].quantity <= 0 ){
+                //remove the item
+                console.log('delete item', i);
+                productsTable.splice(i,1);
+            }
+            // Encode the array.
+            productsTable = JSON.stringify(productsTable);
+            // Add the array back to LocalStorage. 
+            localStorage.setItem("productList", productsTable);
+        };
         
     let quantityPlus = document.createElement('div');
         quantityPlus.innerText = `+`;
@@ -81,7 +88,7 @@ for(let i in panier){
                 //Decode the array. 
                 productsTable = JSON.parse(productsTable);
                 //remove item
-                productsTable.splice(panier[i],1);
+                productsTable.splice(i,1);
                  // Encode the array.
                 productsTable = JSON.stringify(productsTable);
         
@@ -105,10 +112,6 @@ for(let i in panier){
     let totalAmount = `${panier[i].price}` * `${panier[i].quantity}` ;
     totalPrice.innerText = `${totalAmount}` + ` €`;
  }
-
- 
-
-
 
  /**
  * Show empty cart button
