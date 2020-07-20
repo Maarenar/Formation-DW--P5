@@ -1,14 +1,6 @@
 /**
-* Add title on homepage
-*/
-
-let homeTitle = "<h2>Appareils photo vintage</h2>";
-document.getElementById("title").innerHTML = homeTitle;
-
-/**
  * Get the cameras data through API
  */
-
 
 function callAPI(){
     // Create a request variable and assign a new XMLHttpRequest object to it.

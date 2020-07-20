@@ -1,3 +1,3 @@
 function backHome(){
-    window.open("index.php", "_self");
+    window.open("index.html", "_self");
 }

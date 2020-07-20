@@ -3,6 +3,7 @@
  */
 
 let objetProduit = JSON.parse(window.localStorage.getItem("productDetails"));
+console.log(objetProduit);
 
 /**
  * Defining the title as the name stored in localStorage
@@ -15,7 +16,7 @@ pageProduct.appendChild(productTitle);
 
 
 /**
- * Adding the rest of the info stored in localStorage
+ * Adding the rest of the product info stored in localStorage
  */
 
 let productDetails = document.getElementById('product_info');
@@ -34,6 +35,24 @@ let productDescription = document.createElement('p');
 
 productDetails.append(productImage, productPrice, productDescription);
 
+/**
+ * Create lense selection
+ */
+
+ let lensesData = objetProduit.lenses;
+ let productPerso = document.getElementById("product_perso");
+ //Create and append select list
+var selectList = document.createElement("select");
+selectList.id = "mySelect";
+productPerso.appendChild(selectList);
+
+//Create and append the options
+for (var i = 0; i < lensesData.length; i++) {
+    var option = document.createElement("option");
+    option.value = lensesData[i];
+    option.text = lensesData[i];
+    selectList.appendChild(option);
+}
 
 /** 
  * Add product to basket
@@ -47,7 +66,7 @@ function addToCart() {
 
         // If not, initialize the array and add the current object
         productsTable = [];
-        objetProduit.quantity++;
+        objetProduit.quantity = 1;
         productsTable.push(objetProduit);
     } else {
 
