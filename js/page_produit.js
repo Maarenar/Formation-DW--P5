@@ -67,18 +67,20 @@ lenseSelection();
 
 function addToCart() {
     let productsTable = localStorage.getItem("productList");
+    console.log(productsTable);
 
     // Check if productsTable exists in local storage
     if (!productsTable) {
 
         // If not, initialize the array and add the current object
         productsTable = [];
-        objetProduit.quantity = 1;
+        objetProduit.quantity++;
         productsTable.push(objetProduit);
     } else {
 
         // If yes, decode the array. 
         productsTable = JSON.parse(productsTable);
+        console.log(productsTable);
 
         // check if the object is already in the array
         if (productsTable.find(product => product.id === objetProduit.id)) {

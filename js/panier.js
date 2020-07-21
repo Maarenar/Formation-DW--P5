@@ -132,62 +132,6 @@ function showCloseForm(){
  * Send order
  */
 
- function sendData(){
-
-    // Récupérer la valeur des champs saisis par le client
-        
-    let firstName = document.getElementById('firstname').value;
-    let lastName = document.getElementById('lastname').value;
-    let email = document.getElementById('email').value;
-    let adress = document.getElementById('adress').value;
-    let postCode = document.getElementById('postcode').value;
-    let city = document.getElementById('city').value;
-
-    // on met les valeurs dans un objet pour la requete POST
-
-    let contact = {
-        "firstName": firstName,
-        "lastName": lastName,
-        "email": email,
-        "address": adress,
-        'postcode': postCode,
-        "city": city
-    };
-
-    // création de l'objet la requete
-    let objet = {
-    contact,
-    panier
-    };
-
-    let achat = JSON.stringify(objet);
-    if (firstName == ''){
-    alert("Veuillez remplir le prénom")
-    } else if (lastName == ''){
-    alert("Veuillez remplir le nom")
-    } else if (email == ''){
-    alert("Veuillez remplir l'email")
-    } else if (adress == ''){
-    alert("Veuillez remplir l'adresse")
-    } else if (postCode == ''){
-        alert("Veuillez remplir le code postal")
-    } else if (city == ''){
-    alert("Veuillez remplir la ville")
-
-    //envoi de la commande
-    } else {
-    let request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-        if (this.readyState == XMLHttpRequest.DONE) {
-            //Des que la requete est envoyé,la page de confirmation s'ouvre
-            window.open("confirmation.html", "_self");
-        }
-        }
-    request.open("post", "http://localhost:3000/api/cameras/order");
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(achat);
-    } 
-}
 
 
 
