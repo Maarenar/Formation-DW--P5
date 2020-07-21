@@ -8,51 +8,58 @@ console.log(objetProduit);
 /**
  * Defining the title as the name stored in localStorage
  */
-let pageProduct = document.getElementById('page_title');
-let productTitle = document.createElement('h2');
-    productTitle.innerText = `${objetProduit.name}`;
+function displayProductDetails(){
+    let pageProduct = document.getElementById('page_title');
+    let productTitle = document.createElement('h2');
+        productTitle.innerText = `${objetProduit.name}`;
 
-pageProduct.appendChild(productTitle);
+    pageProduct.appendChild(productTitle);
 
 
-/**
- * Adding the rest of the product info stored in localStorage
- */
+    /**
+     * Adding the rest of the product info stored in localStorage
+     */
 
-let productDetails = document.getElementById('product_info');
+    let productDetails = document.getElementById('product_info');
 
-let productImage = document.createElement('img');
-    productImage.className = "product_image";
-    productImage.src = `${objetProduit.imageURL}`;
+    let productImage = document.createElement('img');
+        productImage.className = "product_image";
+        productImage.src = `${objetProduit.imageURL}`;
 
-let productPrice = document.createElement('p');
-    productPrice.className = "product_price";
-    productPrice.innerText = `${objetProduit.price}` + `€`;
+    let productPrice = document.createElement('p');
+        productPrice.className = "product_price";
+        productPrice.innerText = `${objetProduit.price}` + `€`;
 
-let productDescription = document.createElement('p');
-    productDescription.className = "description_produit";
-    productDescription.innerText = `${objetProduit.description}`;
+    let productDescription = document.createElement('p');
+        productDescription.className = "description_produit";
+        productDescription.innerText = `${objetProduit.description}`;
 
-productDetails.append(productImage, productPrice, productDescription);
+    productDetails.append(productImage, productPrice, productDescription);
+}
+
+displayProductDetails();
 
 /**
  * Create lense selection
  */
+function lenseSelection(){
+    let lensesData = objetProduit.lenses;
+    let productPerso = document.getElementById("product_perso");
+    //Create and append select list
+    var selectList = document.createElement("select");
+    selectList.id = "mySelect";
+    productPerso.appendChild(selectList);
 
- let lensesData = objetProduit.lenses;
- let productPerso = document.getElementById("product_perso");
- //Create and append select list
-var selectList = document.createElement("select");
-selectList.id = "mySelect";
-productPerso.appendChild(selectList);
-
-//Create and append the options
-for (var i = 0; i < lensesData.length; i++) {
-    var option = document.createElement("option");
-    option.value = lensesData[i];
-    option.text = lensesData[i];
-    selectList.appendChild(option);
+    //Create and append the options
+    for (var i = 0; i < lensesData.length; i++) {
+        var option = document.createElement("option");
+        option.value = lensesData[i];
+        option.text = lensesData[i];
+        selectList.appendChild(option);
+    }
 }
+
+lenseSelection();
 
 /** 
  * Add product to basket

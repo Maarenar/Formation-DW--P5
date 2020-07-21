@@ -40,7 +40,6 @@ for(let i in panier){
             productsTable[i].quantity--;
             if(productsTable[i].quantity <= 0 ){
                 //remove the item
-                console.log('delete item', i);
                 productsTable.splice(i,1);
             }
             // Encode the array.
@@ -52,14 +51,13 @@ for(let i in panier){
     let quantityPlus = document.createElement('div');
         quantityPlus.innerText = `+`;
         //Add a function to increase the quantity of the item
-        quantityPlus.onclick = function increaseProductQuantity(){
+        quantityPlus.onclick = function (){
             let productsTable = localStorage.getItem("productList");
             //Decode the array. 
             productsTable = JSON.parse(productsTable);
             
             //increase the quantity
             productsTable[i].quantity++;
-            console.log(productsTable[i].quantity);
         
             // Encode the array.
             productsTable = JSON.stringify(productsTable);
