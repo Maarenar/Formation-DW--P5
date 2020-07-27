@@ -3,7 +3,6 @@
  */
 
 let objetProduit = JSON.parse(window.localStorage.getItem("productDetails"));
-console.log(objetProduit);
 
 /**
  * Defining the title as the name stored in localStorage
@@ -58,7 +57,6 @@ function lenseSelection(){
         selectList.appendChild(option);
     }
 }
-
 lenseSelection();
 
 /** 
@@ -67,14 +65,13 @@ lenseSelection();
 
 function addToCart() {
     let productsTable = localStorage.getItem("productList");
-    console.log(productsTable);
 
     // Check if productsTable exists in local storage
     if (!productsTable) {
 
-        // If not, initialize the array and add the current object
+        // If not, initialize the array, initiate the quantity and add the current object
         productsTable = [];
-        objetProduit.quantity++;
+        objetProduit.quantity = 1;
         productsTable.push(objetProduit);
     } else {
 
@@ -83,19 +80,19 @@ function addToCart() {
         console.log(productsTable);
 
         // check if the object is already in the array
-        if (productsTable.find(product => product.id === objetProduit.id)) {
+        if (productsTable.find(product => product._id === objetProduit._id)) {
 
             //if yes ==> just increase the value of the key quantity by 1
             objetProduit.quantity++;
             for (var i = 0; i < productsTable.length; i++) {
-                if (objetProduit.id === productsTable[i].id) { //look for match with id
+                if (objetProduit.id === productsTable[i]._id) { //look for match with id
                     productsTable[i].quantity++; //add
                     break; //exit loop
                 }
             }
         } else {
-            //if not ==> add the object into the array
-            objetProduit.quantity++;
+            //if not ==> initiate the quantity and add the object into the array
+            objetProduit.quantity = 1;
             productsTable.push(objetProduit);
 
         }

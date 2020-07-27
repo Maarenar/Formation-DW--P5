@@ -6,11 +6,9 @@ function callAPI(){
     // Create a request variable and assign a new XMLHttpRequest object to it.
     let request = new XMLHttpRequest(); //objet
     
-    
     request.onreadystatechange = function(){
         if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
             appareil = JSON.parse(this.responseText);
-            console.log('appareil',appareil);
             displayCameras();
         }
     };
@@ -25,8 +23,7 @@ callAPI();
 
 /**
  * Display cameras on homepage
- */
-
+ * */
 const listeVue = document.getElementById('liste');
 
 function displayCameras(){
