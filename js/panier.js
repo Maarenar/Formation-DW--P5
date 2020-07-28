@@ -17,7 +17,7 @@ for(let i in panier){
     let productTitle = document.createElement('h3');
         productTitle.innerText = `${panier[i].name}`;
     let productImage = document.createElement('img');
-        productImage.src = `${panier[i].imageURL}`;
+        productImage.src = `${panier[i].imageUrl}`;
 
     let productPrice = document.createElement('p');
         productPrice.innerText = `${panier[i].price}` * `${panier[i].quantity}` + ` €`;
@@ -97,7 +97,7 @@ for(let i in panier){
 
  let totalPrice = document.getElementById('total_price');
  for(let i = 0; i<panier.length; i++){
-    let totalAmount = `${panier[i].price}` * `${panier[i].quantity}` ;
+    let totalAmount = `${panier[i].price}`;
     totalPrice.innerText = `${totalAmount}` + ` €`;
  }
 
@@ -120,7 +120,7 @@ if(panier){
 function showCloseForm(){
     if (panier){
     document.getElementById("form_order").classList.toggle('form_show');  
-    }else{
+    }else if(!panier){
         let emptyCart = document.getElementById("table_cart");
         let emptyMessage = document.createElement('p');
         emptyMessage.innerText = "Aucun produit dans le panier";
@@ -128,10 +128,48 @@ function showCloseForm(){
     }
 };
 
+
 /**
  * Send order
  */
 
+function sendData(){
+    //Defining Contact object
+    let formData = document.getElementsByClassName("form-input");
+    console.log("formulaire", formData);
+    let orderAddress = {
+        lastName : formData[0].value,
+        firstName : formData[1].value,
+        email : formData[2].value,
+        address: formData[3].value,
+        postcode : formData[4].value,
+        city : formData[5].value,
+    }
+    console.log(orderAddress);
+
+    //Defining array with products ids
+    let productsIds = [];
+    panier.forEach(function(product){
+        productsIds.push(product._id);
+    });
+
+    console.log("array product id", productsIds);
+
+    let orderData = { formData, productsIds };
+
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+
+    let request = new XMLHttpRequest();
+    request.open("POST", "http://localhost:3000/api/cameras/order");
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(orderData));
+    let orderId = response.orderId;
+	localStorage.clear();
+    localStorage.setItem("orderId", orderId);
+}
+
+
+  
 
 
 

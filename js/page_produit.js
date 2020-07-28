@@ -23,7 +23,7 @@ function displayProductDetails(){
 
     let productImage = document.createElement('img');
         productImage.className = "product_image";
-        productImage.src = `${objetProduit.imageURL}`;
+        productImage.src = `${objetProduit.imageUrl}`;
 
     let productPrice = document.createElement('p');
         productPrice.className = "product_price";

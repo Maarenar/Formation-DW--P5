@@ -178,6 +178,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  min-height: 90vh;
 }
 
 #liste {
@@ -319,7 +320,7 @@ main {
   position: absolute;
   background-color: #fff;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.4);
-  width: 40%;
+  width: 95%;
   box-sizing: border-box;
   padding: 15px;
 }
@@ -488,6 +489,14 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+.form_show h4 {
+  text-align: center;
+}
+@media all and (max-width: 576px) {
+  .form_show h4 {
+    padding: 0 5px 0 5px;
+  }
+}
 .form_show div {
   box-sizing: border-box;
   padding: 10px 0 10px 0;
@@ -520,6 +529,11 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media all and (max-width: 576px) {
+  .form_show div form {
+    width: 80%;
+  }
 }
 .form_show div form select {
   font-family: "Roboto", sans-serif;
@@ -581,7 +595,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
 }
 footer .footer_infos {
@@ -596,6 +610,11 @@ footer p {
 footer ul {
   list-style: none;
   margin: 0;
+}
+@media all and (max-width: 768px) {
+  footer ul {
+    display: none;
+  }
 }
 footer section {
   width: 31%;

@@ -13,9 +13,9 @@
                 <nav>
                     <i class="fas fa-bars" onclick="openMenu()"></i>
                     <ul id="menu_nav">
-                        <li><a href="#">Ours en peluche</a></li>
-                        <li><a href="#">Caméras vintages</a></li>
-                        <li><a href="#">Meubles en chêne</a></li>
+                        <li><a href="main-placeholder.html">Ours en peluche</a></li>
+                        <li><a href="index.html">Caméras vintages</a></li>
+                        <li><a href="main-placeholder.html">Meubles en chêne</a></li>
                     </ul>
                 </nav>
                 <a href="panier.html"><p>Mon panier</p><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
@@ -43,7 +43,7 @@
                     <h4>Merci de remplir le formulaire pour passer commande (tous les champs sont obligatoires)</h4>
                     <i class="far fa-times" onclick="showCloseForm()"></i>
 
-                    <form>
+                    <form id="formOrder">
                         <label for="pays"></label>
                         <select name="pays" id="pays" autofocus>
                             <option value="france">France</option>
@@ -52,38 +52,37 @@
                             <option value="italie">Italie</option>
                             <option value="suisse">Suisse</option>
                         </select>
-                        <label for="lastname"></label><input type="text" name="lastname" id="lastname" placeholder="Votre nom" required/>
-                        <label for="firstname"></label><input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required/>
-                        <label for="email"></label><input type="email" name="email" id="email" placeholder="Votre e-mail" required/>
-                        <label for="adress"></label><input type="text" name="adress" id="adress" placeholder="Adresse ligne 1" required/>
-                        <label for="postcode"></label><input type="text" name="postcode" id="postcode" placeholder="Code postal" required/>
-                        <label for="city"></label><input type="text" name="city" id="city" placeholder="Ville" required/>
-                        <input type="submit" value="Valider" onclick="sendData()"/>
+                        <label for="lastname"></label><input class="form-input" type="text" name="lastname" id="lastname" placeholder="Votre nom" required/>
+                        <label for="firstname"></label><input class="form-input" type="text" name="firstname" id="firstname" placeholder="Votre prénom" required/>
+                        <label for="email"></label><input class="form-input" type="email" name="email" id="email" placeholder="Votre e-mail" required/>
+                        <label for="adress"></label><input class="form-input" type="text" name="adress" id="adress" placeholder="Adresse ligne 1" required/>
+                        <label for="postcode"></label><input class="form-input" type="text" name="postcode" id="postcode" placeholder="Code postal" required/>
+                        <label for="city"></label><input class="form-input" type="text" name="city" id="city" placeholder="Ville" required/>
+                        <input type="submit" value="Valider" id="confirmOrder" onclick="sendData()"/>
                     </form>
                 </div>
             </section>
         </main>
         <footer>
             <section class="footer_infos">
-                <p>À propos</p>
+                <a href="footer-placeholder.html">À propos</a>
                 <ul>
-                    <li><a href="#">Qui sommes nous?</a></li>
-                    <li><a href="#">Nos engagements</a></li>
-                    <li><a href="#">Carte cadeau</a></li>
-                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="footer-placeholder.html">Qui sommes nous?</a></li>
+                    <li><a href="footer-placeholder.html">Nos engagements</a></li>
+                    <li><a href="footer-placeholder.html">Carte cadeau</a></li>
+                    <li><a href="footer-placeholder.html">Catalogue</a></li>
                 </ul>
             </section>
             <section class="footer_infos">
-                <p>Orinoco&vous</p>
+                <a href="footer-placeholder.html">Orinoco&vous</a>
                 <ul>
-                    <li><a href="#">Livraisons et retours</a></li>
-                    <li><a href="#">Services et garanties</a></li>
-                    <li><a href="#">Nous contacter</a></li>
-                    <li><a href="#">CGV</a></li>
+                    <li><a href="footer-placeholder.html">Livraisons et retours</a></li>
+                    <li><a href="footer-placeholder.html">Services et garanties</a></li>
+                    <li><a href="footer-placeholder.html">Nous contacter</a></li>
+                    <li><a href="footer-placeholder.html">CGV</a></li>
                 </ul>
             </section>
-            <img class="logo_bottom" src="#" alt="">
-            <section class="social"></div>
+            <section class="social">
                 <a href="https://www.facebook.com/" target="_blank">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                     <p>Facebook</p>

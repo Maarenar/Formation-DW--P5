@@ -40,7 +40,8 @@ function displayCameras(){
             productName.innerText = `${appareil[i].name}`;
 
         let productImage = document.createElement('img');
-            productImage.src = `${appareil[i].imageURL}`;
+            productImage.src = `${appareil[i].imageUrl}`;
+            console.log(productImage.src);
 
         let productRightDiv = document.createElement('div');
         let productPrice = document.createElement('p');

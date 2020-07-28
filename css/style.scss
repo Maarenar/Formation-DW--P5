@@ -185,6 +185,7 @@ main{
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    min-height: 90vh;
 }
 
 #liste{
@@ -315,7 +316,7 @@ main{
     position: absolute;
     background-color: #fff;
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.4);
-    width: 40%;
+    width: 95%;
     box-sizing: border-box;
     padding: 15px;
     div{
@@ -482,6 +483,12 @@ button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    h4{
+        text-align: center;
+        @media all and (max-width: 576px){
+            padding: 0 5px 0 5px;
+        }
+    }
     div{
         box-sizing: border-box;
         padding: 10px 0 10px 0;
@@ -511,6 +518,9 @@ button{
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            @media all and (max-width: 576px){
+                width: 80%;
+            }
             select{
                 @include text();
                 width: 100%;
@@ -571,8 +581,8 @@ footer{
     justify-content: space-around;
     align-items: center;
     background-color: rgba(0,0,0,0.1);
-    padding: 10px;
-    box-sizing: border-box; 
+    padding: 20px;
+    box-sizing: border-box;
     .footer_infos{
         display: flex;
         flex-direction: column;
@@ -585,6 +595,9 @@ footer{
     ul{
         list-style: none; 
         margin: 0;
+        @media all and (max-width: 768px){
+            display: none;
+        }
     }
     section{
         width: 31%; 
