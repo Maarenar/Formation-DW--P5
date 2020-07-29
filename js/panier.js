@@ -96,10 +96,12 @@ for(let i in panier){
  */
 
  let totalPrice = document.getElementById('total_price');
+ let totalAmount = 0;
  for(let i = 0; i<panier.length; i++){
-    let totalAmount = `${panier[i].price}`;
-    totalPrice.innerText = `${totalAmount}` + ` €`;
+    totalAmount += panier[i].price * panier[i].quantity;
  }
+ totalPrice.innerText = `${totalAmount}` + ` €`;
+ 
 
  /**
  * Show empty cart button
@@ -129,6 +131,12 @@ function showCloseForm(){
 };
 
 
+document.getElementById('formOrder').addEventListener('submit', function(e){
+    e.preventDefault();
+    sendData();
+})
+
+
 /**
  * Send order
  */
@@ -136,8 +144,8 @@ function showCloseForm(){
 function sendData(){
     //Defining Contact object
     let formData = document.getElementsByClassName("form-input");
-    console.log("formulaire", formData);
-    let orderAddress = {
+    //console.log("formulaire", formData);
+    let contact = {
         lastName : formData[0].value,
         firstName : formData[1].value,
         email : formData[2].value,
@@ -145,27 +153,28 @@ function sendData(){
         postcode : formData[4].value,
         city : formData[5].value,
     }
-    console.log(orderAddress);
 
     //Defining array with products ids
-    let productsIds = [];
+    let products = [];
     panier.forEach(function(product){
-        productsIds.push(product._id);
+        products.push(product._id);
     });
 
-    console.log("array product id", productsIds);
-
-    let orderData = { formData, productsIds };
+    let orderData = {contact, products};
+    console.log(orderData);
 
     // Create a request variable and assign a new XMLHttpRequest object to it.
 
-    let request = new XMLHttpRequest();
-    request.open("POST", "http://localhost:3000/api/cameras/order");
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(JSON.stringify(orderData));
-    let orderId = response.orderId;
-	localStorage.clear();
-    localStorage.setItem("orderId", orderId);
+    request('POST', 'http://localhost:3000/api/cameras/order', function(response) {
+        console.log("resp",response);
+        let orderId = response.orderId;
+        localStorage.clear();
+        localStorage.setItem("totalAmount", totalAmount);
+        localStorage.setItem("orderId", orderId);
+    }, orderData);
+
+    window.open("confirmation.html");
+
 }
 
 

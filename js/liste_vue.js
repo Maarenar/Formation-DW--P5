@@ -2,31 +2,16 @@
  * Get the cameras data through API
  */
 
-function callAPI(){
-    // Create a request variable and assign a new XMLHttpRequest object to it.
-    let request = new XMLHttpRequest(); //objet
-    
-    request.onreadystatechange = function(){
-        if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
-            appareil = JSON.parse(this.responseText);
-            displayCameras();
-        }
-    };
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', "http://localhost:3000/api/cameras");
-    
-    // Send request
-    request.send();
-  
-}
-callAPI();
+request('GET','http://localhost:3000/api/cameras', function(appareil){
+    displayCameras(appareil)
+});
 
 /**
  * Display cameras on homepage
  * */
 const listeVue = document.getElementById('liste');
 
-function displayCameras(){
+function displayCameras(appareil){
     for(let i in appareil) {
         let productCard = document.createElement('section');
             productCard.classList.add('product_card');
