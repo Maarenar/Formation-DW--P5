@@ -20,7 +20,7 @@ for(let i in panier){
         productImage.src = `${panier[i].imageUrl}`;
 
     let productPrice = document.createElement('p');
-        productPrice.innerText = `${panier[i].price}` * `${panier[i].quantity}` + ` €`;
+        productPrice.innerText = 'Prix unitaire : ' + `${panier[i].price}` + ` €`;
 
     //create quantity cursor
     let productQuantity = document.createElement('div');
@@ -174,7 +174,6 @@ function sendData(){
     }, orderData);
 
     window.open("confirmation.html");
-
 }
 
 

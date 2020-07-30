@@ -3,7 +3,7 @@
  */
 
 request('GET','http://localhost:3000/api/cameras', function(appareil){
-    displayCameras(appareil)
+    displayCameras(appareil);
 });
 
 /**
